@@ -1,0 +1,8 @@
+DEBUG:root:This is a debug log.
+WARNING:root:This is a warning log
+DEBUG:root:This is a debug log.
+WARNING:root:This is a warning log
+2018-12-11 17:50:26,219======DEBUG======(message)s
+2018-12-11 17:50:26,219======WARNING======(message)s
+2018-12-11 17:51:09,995======DEBUG======This is a debug log.
+2018-12-11 17:51:09,996======WARNING======This is a warning log
