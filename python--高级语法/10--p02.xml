@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<School>
+    <Teacher desc="PythonTeacher">
+        <Name>LiuDana</Name>
+        <Age>18</Age>
+        <Mobile>13260446055</Mobile>
+    </Teacher>
+    <Student>
+        <Name Other="他是班长">云汐风</Name>
+        <Age>12</Age>
+        <Score>math>80</Score>
+    </Student>
+    <Student>
+        <Name>Madao</Name>
+        <Age>16</Age>
+    </Student>
+    <!--这是一个xml的小例子-->
+</School>

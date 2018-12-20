@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<student type="" gender="" location="">
-    <name>hah</name>
-    <age>18</age>
-</student>
+<School>
+    <Student type="" gender="" location="">
+        <Name>hah</Name>
+        <Age>18</Age>
+        <Score>math>80</Score>
+    </Student>
+    <ClassRoom>
+        <Name>2014</Name>
+        <Location>1-23-1</Location>
+    </ClassRoom>
+</School>
