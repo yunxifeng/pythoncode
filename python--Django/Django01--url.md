@@ -55,11 +55,47 @@
       - `/oo/one/two/three/oo/` 不配对 r'three/$' 
       - 正则开头的`/`省略
    - 如果从上到下都没有找到合适的匹配内容,则报错
-### 正常映射       
-- 把某一个符合RE的URL映射到事务处理函数中
-   - e.g.
-   from showeast import views as sv
-   urlpatterns = [
-        url(r'^admin/', admin.site.urls),
-        url(r'^normalmap/', sv.normalmap)
-   ]
+### 映射
+- 1.正常映射       
+    - 把某一个符合RE的URL映射到事务处理函数中
+    - e.g.
+        from showeast import views as sv
+        urlpatterns = [
+            url(r'^admin/', admin.site.urls),
+            url(r'^normalmap/', sv.normalmap)
+        ]
+- 2.URL中带参数映射
+    - 在事件处理代码中需要URL传入参数,形如 /myurl/param中的param
+    - 参数都是字符串形式,如果需要整数等形式需要自行转换
+    - e.g.
+        /search/page/432 中的432需要经常性变换,所以设置成参数比较合适
+### URL在app中处理
+- 如果所有应用URL都集中在主路由中,可能导致文件的臃肿
+- 可以把urls具体功能逐渐分散到每个app中
+    - 从django.conf.urls导入include
+    - 注意此时RE的写法
+    - include(子路由文件名)
+- 使用方法:
+    - 确保include被导入
+    - 写主路由的开头
+    - 写子路由
+    - 编写views函数
+- e.g.
+    - url(r'^teacher/', include(teacherurls)),
+- 同样可以使用参数
+### URL中的嵌套参数
+- 捕获某个参数的一部分
+- e.g. 例如URL /index/page-3, 需要捕获数字3作为参数
+    - url(r'index/(page-(\d+)/)?$', sv.myindex), #不太好
+    - url(r'index/(?:page-(?P<page_number>\d+)/)?$', sv.myindex), #好
+    - ?:表示忽略此参数
+### 传递额外参数
+- 参数不仅仅来自于URL,还可能是我们自己定义的内容(字典格式)
+- e.g.
+   - 注: 'name'必须与views内一致
+   url(r'extrem/$', sv.extremParam, {'name':'yunxifeng'}),
+- 附加参数同样适用于include语句
+### URL的反向解析
+- 防止硬编码
+- 本质上是对每一个URL进行命名
+- 以后再编码代码中使用的URL的值,原则上都应该使用反向解析
