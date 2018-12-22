@@ -39,4 +39,27 @@
    - 按照具体的请求url,导入到相应的业务处理模块的一个功能模块
    - django的信息控制中枢
    - 本质上是接受的url和相应的处理模块的一个映射
-   - 在接受URL的请求匹配上使用了RE
+   - 在接受URL的请求匹配上使用了RE,具体格式见urls.py中所示
+- 需要关注两点:
+   - 1.接受的URL是什么,即如何使用RE对传入的URL进行匹配
+   - 2.接收到的URL应该匹配到哪个处理模块
+- url匹配规则:
+   - 从上往下逐一进行比对
+   - url格式是分级格式,按照级别一级一级往下对比,主要对应url包含子url的情况
+   - 子url一旦被调用,则不会返回到主url
+      - `/one/two/three/`
+   - 正则以r开头,表示不需要转义,注意尖号(^)和美元符号($)
+      - `/one/two/three` 配对 r'^one/'
+      - `/oo/one/two/three` 不配对 r'^one/'
+      - `/one/two/three/` 配对 r'three/$'
+      - `/oo/one/two/three/oo/` 不配对 r'three/$' 
+      - 正则开头的`/`省略
+   - 如果从上到下都没有找到合适的匹配内容,则报错
+### 正常映射       
+- 把某一个符合RE的URL映射到事务处理函数中
+   - e.g.
+   from showeast import views as sv
+   urlpatterns = [
+        url(r'^admin/', admin.site.urls),
+        url(r'^normalmap/', sv.normalmap)
+   ]
