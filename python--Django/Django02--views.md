@@ -122,13 +122,14 @@
     - DEBUG=False
 ## 基于类的视图
 - [https://blog.csdn.net/qq_42684307/article/details/81042845]
+- 案例见session章节
 - 和基于函数的视图的优势和区别:
     - HTTP方法的method可以有各自的方法,不需要使用条件分支来解决
     - 可以使用OOP技术(例如Mixin)
 - 概述
     - 核心是允许使用不同的实例方法来相应不同的HTTP请求方法,而避开条件分支实现
     - as_view函数昨晚类的可调用入库,该方法创建一个实例并调用dispatch方法,按照请求方法对请求进行分发,如果该
-    方法没有定义,则引发HttpResponseNotAllowed
+      方法没有定义,则引发HttpResponseNotAllowed
 - 类属性使用
     - 在类定义时直接覆盖
     - 在调用as_view的时候直接昨晚参数使用,例如:
