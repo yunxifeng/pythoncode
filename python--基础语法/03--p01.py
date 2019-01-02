@@ -26,16 +26,3 @@ print(shilii)
 age4=18+True
 print(age4)
 
-# 变量类型--String
-love="我爱Python"
-print(love)
-#单双引号交错使用的例子
-#<a style="color:red">哈哈哈</a>
-#用引号表示上面的字符串
-html='<a style="color:red";>哈哈哈</a>'
-
-htmls='''
-我爱
-Python
-'''
-print(htmls)

@@ -1,3 +1,18 @@
+# 变量类型--String
+love="我爱Python"
+print(love)
+#单双引号交错使用的例子
+#<a style="color:red">哈哈哈</a>
+#用引号表示上面的字符串
+html='<a style="color:red";>哈哈哈</a>'
+
+htmls='''
+我爱
+Python
+'''
+print(htmls)
+
+
 # 字符串(String)---转义字符
 #如果想表示出Let's go
 #1.可以使用嵌套引号，即外层使用双引号
