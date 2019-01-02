@@ -18,7 +18,7 @@ import json
 3.结果就应该是girl的释义
 '''
 # 基础url
-base_url = "http://fanyi.baidu.com/sug"
+base_url = "https://fanyi.baidu.com/sug"
 
 # 改造data
 value = input("请输入要查询的单词:")

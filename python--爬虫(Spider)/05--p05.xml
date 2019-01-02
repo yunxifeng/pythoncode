@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<BookStore>
+
+    <book categary="cook-code">
+        <title lang="en">Python</title>
+        <author>云汐风</author>
+        <price>28</price>
+    </book>
+
+    <book categary="cook">
+        <title lang="en">Python</title>
+        <author>云汐风</author>
+        <price>28</price>
+    </book>
+
+    <book categary="code">
+        <title lang="en">Python</title>
+        <author>云汐风</author>
+        <price>28</price>
+    </book>
+
+</BookStore>

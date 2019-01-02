@@ -39,8 +39,8 @@
 - [http://www.w3school.com.cn/xpath/index.asp]
 ## XPath开发工具
 - 开源的XPath表达式编辑工具: XMLQuire
-- Chrome插件: XPath Helper
-- Firefox插件: XPath Checker
+    - Chrome插件: XPath Helper
+    - Firefox插件: XPath Checker
 ## 选取节点
 - nodename: 选取此节点的所有子节点
 - /: 从根节点开始选取
@@ -48,9 +48,9 @@
      /School:选取School节点
 - //: 选取节点, 不考虑位置
      //Age: 选取所有Age节点, 一般组成列表返回
-- .: 选取当前节点
-- ..: 选取当前节点的的父亲节点
-- @: 选取属性
+- .  : 选取当前节点
+- .. : 选取当前节点的的父亲节点
+- @  : 选取属性
 - XPath中查找一般按路径方法查找, 以下是路径表示方法
      School/Teacher: 返回Teacher节点
      School/Student: 返回两个Student节点

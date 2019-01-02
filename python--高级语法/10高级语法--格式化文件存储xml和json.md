@@ -5,9 +5,9 @@
 - json:更加简洁
 ## XML文件
 - 参考资料:
-   - https://docs.python.org/3/library/xml.etree.elementtree.html
-   - http://www.runoob.com/python/python-xml.html
-   - https://blog.csdn.net/seetheworld518/article/details/49535285
+   - [https://docs.python.org/3/library/xml.etree.elementtree.html]
+   - [http://www.runoob.com/python/python-xml.html]
+   - [https://blog.csdn.net/seetheworld518/article/details/49535285]
 - XML(Extensible Markup Language):可扩展标记语言
    - 标记语言:语言中使用尖括号<>括起来的文本字符串标记
    - 可扩展:用户可以自己定义需要的标记
