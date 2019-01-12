@@ -9,10 +9,11 @@ def fun():
 
 print(a1)
 fun()
-print(a2)
+# a2是函数内定义的变量, 不能被外部调用
+# print(a2)
 
 
-# 提升局部变量为全局变量
+# global--提升局部变量为全局变量
 def fun():
     global b1
     b1=100
@@ -25,10 +26,11 @@ def fun():
 #print(b2)
 fun()
 #print(b1)如果在fun()上面，则报错，为什么？
+# 因为只有运行fun()函数后,b1才被提升为全局变量
 print(b1)
 
 
-# globals和locals是内建函数（buildin）
+# globals和locals是内建函数（builtin）
 a=1
 b=2
 

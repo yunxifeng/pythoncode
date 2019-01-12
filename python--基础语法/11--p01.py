@@ -15,7 +15,7 @@ for name in ['A','B','C','D']:
     if name=="C":
         print("我最爱的{0}出现了".format(name))
     else:
-        print("同学我们不约，不约，同学请自重")
+        print("{0}我们不约，不约，同学请自重".format(name))
 
 # range练习
 # 打印1-10的数字
@@ -28,10 +28,6 @@ for i in range(1,11):
 # for-else语句
 # 打印列表中的同学
 # 如果没有在列表中，或者列表结束了，我们需要打印提示语句，表示不会再爱了
-
-#打印学生列表姓名
-#如果是C，那是我的最爱
-#如果是别的人，那就冷酷地拒绝他
 for name in ['A','B','C','D']:
     print(name)
     if name=="C":
@@ -43,8 +39,8 @@ else:
 
 # for循环之break
 # 在1-10的数字中，寻找数字7，一旦找到，打印出来，其余则什么也不做
-# for循环中的变量表示，一般用i，k，m，n，或者indx，idx，item之类
-# 在Python中，如果循环变量名称不重要，可以用下划线（_）代替
+# for循环中的变量表示，一般用i，k，m，n，或者index，idx，item之类
+# 在Python中，如果循环变量名称不重要，可以用下划线"_"代替
 for i in range(1,11):
     if i==7:
         print("我找到了")
@@ -57,7 +53,7 @@ for i in range(1,11):
 # 在1-10的数字中，寻找偶数，一旦找到，打印出来，其余则什么也不做
 
 for i in range(1,11):
-    if i%2==1:
+    if i % 2 == 1:
         continue
     else:
         print("{0}是偶数".format(i))
@@ -75,11 +71,10 @@ for i in range(1,11):
 for i in range(1, 11):
     if i % 2 == 1:
         continue
-
     print("{0}是偶数".format(i))
 
 # for循环之pass
-# pass例子，一般用于站位
+# pass例子，一般用于占位
 # 没有pass就报语法错误（只有一句for i in range(1,11):）
 for i in range(1,11):
     pass

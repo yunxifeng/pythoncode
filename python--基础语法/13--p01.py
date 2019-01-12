@@ -23,13 +23,13 @@ addr = "我家"
 stu_key(age=a, name=n, addr=addr)
 
 # 错误示例，普通参数只按照位置传递
-# stu(a,n,addr)
+# stu_key(a,n,addr)
 
 
 # 收集参数示例1
 # 函数模拟一个学生进行自我介绍，但具体内容不清楚
-# args,可以把他当做一个list
-def stu( *args):
+# *args-->创建了一个空Tuple
+def stu(*args):
     print("hello,大家好，我自我介绍一下，简单说两句：")
     # type函数作用是检测变量的类型
     print(type(args))
@@ -42,7 +42,7 @@ stu("Madao")
 # 说明收集参数可以不带任何实参调用，此时收集参数为空tuple
 stu()
 # 如果使用关键字参数格式调用，会出现问题
-stu(name = "Python")
+# stu(name = "Python")
 
 
 # 收集参数案例2
@@ -65,6 +65,7 @@ stu(name="Madao")
 
 # 收集参数混合调用案例
 # stu模拟一个学生的自我介绍
+# *args收集的是位置参数,同样要放在关键字参数前面
 def stu(name, age, *args, hobby="没有", **kwargs):
     print("我叫{0}，我今年{1}岁了".format(name, age))
     if hobby == "没有":
@@ -91,7 +92,7 @@ stu(name, age, hobby="编程")
 stu(name, age, "Python", "java", hobby="哈哈哈", job="程序员", home="nanyang")
 
 
-# 收集参数的解包问题
+# 收集参数的解包问题01
 def stu(*args):
     print("哈哈哈")
     # 标示循环次数，主要用来调试
@@ -105,47 +106,24 @@ def stu(*args):
 
 stu("Python", "郑大", "21", "happy")
 
-# 这里，args的表示形式是字典内一个list类型的元素，即args=（【"Python","郑大","21","happy"】）
+# 下面代码将整个list当做一个参数放进了Tuple
+# 这里，args的表示形式是Tuple内一个list类型的元素，即args=（【"Python","郑大","21","happy"】）
 # 很显然与我们最初的想法相违背
 l = ["Python", "郑大", "21", "happy"]
 stu(l)
 # 此时的调用，我们就需要解包符号，即调用的时候在前面加一个星号
 stu(*l)
 
+# 收集参数的解包问题02
+def stu(**kwargs):
+    print("哈哈哈")
+    # 标示循环次数，主要用来调试
+    n = 0
+    for i in kwargs:
+        print(type(i))
+        print(n)
+        n += 1
+        print(i)
 
-
-# 查找函数帮助文档
-# 1.用help函数
-help(print)
-#  sep=''(分隔符，以’‘作为分隔) end=’\n‘(结束后换行)
-# （）里面就是默认参数
-
-# 函数文档案例
-# 函数stu模拟一个学生的自我介绍内容
-def stu(name,age,*args):
-# 单引号定义单行，严格来说不能定义多行，推荐三单引号
-#    '这是文档'
-# 这样写也不是特别好
-    '''
-    这是第一行
-    这是第二行
-    这是第三行
-    '''
-    print("This is hanshu stu")
-# 查看函数文档
-help(stu)
-stu.__doc__
-
-# 函数文档标准格式示例
-def stu(name,age):
-    '''
-    这是文档的文字内容
-    :param name: 表示学生的姓名
-    :param age: 表示学生的年龄
-    :return: 此函数没有返回值
-    '''
-    pass
-
-print(help(stu))
-print("*" * 20)
-print (stu.__doc__)
+d = {"name": "云汐风", "age": 18, "sex": "男"}
+stu(**d)

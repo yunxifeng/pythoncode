@@ -1,7 +1,7 @@
 # 函数--01
 # 定义一个函数
 # 只是定义的话不会执行
-# 1.def关键字，后跟一个空格
+# 1.def(define)关键字，后跟一个空格
 # 2.函数名，自己定义，需要遵循变量名命名规则，约定俗成，大驼峰命名只给类用
 # 3.后面的括号和冒号不能省，括号内可以有参数也可以没有
 # 4.函数内所有代码缩进
@@ -30,7 +30,7 @@ hello(p)
 def hello(person):
     print("{0},你怎么了".format(person))
     print("sir,你不理我我就走了")
-    return "我已经跟{0}打招呼了，{1}不理我".format(person,person)
+    return "我已经跟{0}打招呼了，{0}不理我".format(person)
 p="明月"
 rst=hello(p)
 
@@ -38,11 +38,12 @@ print(rst)
 
 
 # return案例2
+# 函数一旦执行return语句，则无条件返回，即结束函数的执行
 def hello(person):
     print("{0},你怎么了".format(person))
-    return"哈哈，我提前结束了"
+    return "哈哈，我提前结束了"
     print("sir,你不理我我就走了")
-    return "我已经跟{0}打招呼了，{1}不理我".format(person,person)
+    return "我已经跟{0}打招呼了，{0}不理我".format(person)
 p="明月"
 rst=hello(p)
 print(rst)
@@ -71,7 +72,11 @@ for row in range(1,10):
     #print("{0}--a line".format(row))
     for col in range(1,row+1):
         #print函数默认任务打印完毕后换行
-        print(row*col,end="")
+        # print(value, sep="", end="\n",...)参数
+        # value: 打印内容
+        # sep(separator): 分隔符
+        # end: 以...结束
+        print(row * col, end="")
     print("-------------------")
 # 没有对齐，是因为没用占位符，格式化
 
@@ -80,7 +85,7 @@ for row in range(1,10):
 def printLine(row):
     for col in range(1,row+1):
         #print函数默认任务打印完毕后换行
-        print(row*col,end="")
+        print(row * col,end="")
 # 这里借用print的换行功能
     print("")
 
@@ -135,6 +140,7 @@ def fib(n):
     if n==2:
         return 1
     #思考：为什么后面return能够正确执行，而不用else语句
+    # 缩进
     return fib(n-1)+fib(n-2)
 
 print(fib(10))
@@ -183,3 +189,40 @@ c = "C"
 
 n = 1
 hano(n, a, b, c)
+
+# 查找函数帮助文档
+# 1.用help函数
+help(print)
+#  sep=''(分隔符，以’‘作为分隔) end=’\n‘(结束后换行)
+# （）里面就是默认参数
+
+# 函数文档案例
+# 函数stu模拟一个学生的自我介绍内容
+def stu(name,age,*args):
+# 单引号定义单行，严格来说不能定义多行，推荐三单引号
+#    '这是文档'
+# 这样写也不是特别好
+    '''
+    这是第一行
+    这是第二行
+    这是第三行
+    '''
+    print("This is hanshu stu")
+# 查看函数文档
+help(stu)
+# 或者
+stu.__doc__
+
+# 函数文档标准格式示例
+def stu(name,age):
+    '''
+    这是文档的文字内容
+    :param name: 表示学生的姓名
+    :param age: 表示学生的年龄
+    :return: 此函数没有返回值
+    '''
+    pass
+# 注: param(英文释义: 参数)
+print(help(stu))
+print("*" * 20)
+print(stu.__doc__)
