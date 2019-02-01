@@ -355,10 +355,10 @@ print(b)
 
 # 深拷贝--deepcopy
 from copy import deepcopy
-a = [1,2,3]
-print(id(a))
+a = [1,2,3,[4,5,6]]
+print(id(a[3]))
 b = deepcopy(a)
-print(id(b))
+print(id(b[3]))
 
 # 同学问题
 # 传值与传址问题

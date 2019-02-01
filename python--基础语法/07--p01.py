@@ -75,11 +75,14 @@ print(dd)
 dd={k:v for k,v in d.items() if v%2==0}
 print(dd)
 
+d = {k:v for k in range(1,3) for v in range(4,6)}
+print(type(d))
+
 # 通用函数
 a = {"one":1, "two":2, "three":3}
 print(len(a))
 print(max(a, key=a.get))
-print(min(a,key=a.get))
+print(min(a, key=a.get))
 
 # str(d)：返回字典的字符串格式
 d={"one":1,"two":2,"three":3}
@@ -122,6 +125,6 @@ print(d.get("jkashf",100))
 #fromkeys:使用指定的序列作为键，使用一个值作为字典的所有键的值
 l=["enis","zwei","dree"]
 #注意fromkeys两个参数的类型
-#注意fromkeys的调用主体
+#注意fromkeys的调用主体-->dict
 d=dict.fromkeys(l,"hahahah")
 print(d)

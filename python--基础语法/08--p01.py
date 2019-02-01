@@ -102,7 +102,7 @@ s.remove(100)
 print(s)
 #思考：为什么remove不存在的值会报keyerror？提示：哈希
 
-# s.pop(index): 弹出指定下标元素,若不指定,则默认弹出下标为0的元素
+# s.pop(): 弹出第一个元素
 s={1,2,3,4,5,6,7}
 print(id(s))
 print(s.pop())
@@ -113,7 +113,7 @@ print(id(s))
 # difference：差集
 # union：并集
 # issubset：检查一个集合是否为另一个集合的子集
-# issuperset：检查一个集合是否为另一个超集
+# issuperset：检查一个集合是否为另一个集合的超集
 s1={1,2,3,4,5,6}
 s2={5,6,7,8,9}
 

@@ -30,14 +30,15 @@
 - 6.删除Set元素
    - s.remove(*): 移除指定元素, 若指定元素不存在则报错KeyError: *
    - s.discard(*)：移除集合中指定的值，跟remove一样，但如果要删除不存在的值，不报错
-   - s.pop(index): 弹出指定下标元素,若不指定,则默认弹出下标为0的元素
+   - s.pop(index): 弹出第一个元素
 - 7.s3 = s1.intersection(s2): 求s1和s2的交集
     s3 = s1.union(s2): 求s1和s2的并集
     s3 = s1.difference(s2): 求s1和s2的差集
 - 8.m = s1.issubset(s2): 判断s1是否是s2的一个子集, 返回布尔值
     n = s1.issuperset(s2): 判断s1是否是s2的超集, 返回布尔值
 - 9.Set的数学运算
-   - s3 = s1 + s2
+   - s3 = s1 - s2
+   - 支持减法,不支持加法
 ## 冰冻集合(Frozen Set)
 - 不可以进行任何修改的集合
 - 特殊集合，除了不能修改，其他特性与普通集合一样
