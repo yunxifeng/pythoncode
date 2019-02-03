@@ -120,6 +120,7 @@ class Cat(BuruAni):
 # 此时,由于Cat没有构造函数,则向上查找
 # 因为BuruAni的构造函数需要两个参数,实例化的时候给了一个,所以会报错
 #c = Cat()
+name = "Y"
 c = Cat(name)
 
 print("!!!下面是第七段代码!!!")
@@ -144,3 +145,16 @@ print("!!!下面是第八段代码!!!")
 # 证明super不是关键字,而是一个类
 print(type(super))
 help(super)
+
+# 子类扩展父类的构造方法
+class A():
+    def __init__(self,name):
+        self.name =name
+class B(A):
+    def __init__(self,name,age):
+        # 法一
+        A.__init__(self,name)
+        self.age = age
+        # 法二
+        super(B, self).__init__(name)
+        self.age = age

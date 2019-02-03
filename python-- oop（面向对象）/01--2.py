@@ -158,6 +158,7 @@ print(p.name)
 print(Person.__dict__)
 
 p._Person__age = 19
+# 访问私有属性
 print(p._Person__age)
 
 
