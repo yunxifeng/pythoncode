@@ -109,7 +109,8 @@ class B(A):
 class C():
     pass
 
-print(issubclass (B,A))
+
+print(issubclass(B,A))
 print(issubclass(C,A))
 print(issubclass(B,object))
 print("*" * 20)
@@ -126,6 +127,7 @@ a = A()
 print(hasattr(a,"name"))
 print(hasattr(a,"age"))
 print("*" * 20)
+
 #类相关函数--dir
 class A():
     pass

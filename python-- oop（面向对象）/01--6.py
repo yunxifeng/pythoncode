@@ -33,7 +33,8 @@ class A():
         self.name= "图灵学院:" + name
     # 此功能是对变量进行删除操作的时候,执行函数功能
     def fdel(self):
-         pass
+        del self.name
+        print("我被删除了")
     #property的四个参数顺序是固定的,读取调用函数,写入调用函数,删除调用函数
     name2 = property(fget, fset, fdel, "这是一个文档")
 
@@ -119,7 +120,7 @@ class A():
 def say(self):
     print("Saying")
 
-#直接将say函数赋值给实例是不行的
+# 此处去掉say函数的参数self(或者a.say(随便给个参数)),是可以正常运行的,即将say函数绑定在了对象实例a上,与老师所讲(函数不能绑定在对象实例上)有出入
 '''
 a = A()
 a.say = say

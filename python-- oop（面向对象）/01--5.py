@@ -2,7 +2,7 @@ print("!!!下面是第一段代码!!!")
 # 属性案例
 # 创建Student类,描述学生类
 # 学生具有Student.name属性
-# 但name格式并不同意
+# 但name格式并不统一
 # 下面的做法很麻烦
 class Student():
     def __init__(self, name, age):
